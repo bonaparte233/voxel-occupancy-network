@@ -1,4 +1,4 @@
-# Voxel Occupancy Network - Standalone Module
+# Voxel Occupancy Network
 
 A standalone implementation of voxel-conditioned occupancy networks extracted from the original [Occupancy Networks](https://github.com/autonomousvision/occupancy_networks) codebase by Mescheder et al.
 
