@@ -107,7 +107,7 @@ This module replicates the exact functionality of the original `configs/voxels/o
 # Original configuration
 model:
   encoder: voxel_simple      # -> VoxelEncoder
-  decoder: cbatchnorm        # -> DecoderCBatchNorm  
+  decoder: cbatchnorm        # -> DecoderCBatchNorm
   c_dim: 256
   z_dim: 0                   # Deterministic model
 ```
@@ -136,7 +136,7 @@ trainer = VoxelOccupancyTrainer(model, optimizer, device)
 for epoch in range(num_epochs):
     for batch in train_loader:
         loss = trainer.train_step(batch)
-    
+
     # Evaluation
     eval_dict = trainer.evaluate(val_loader)
     print(f"Epoch {epoch}: Loss={eval_dict['loss']:.4f}, IoU={eval_dict['iou']:.4f}")
@@ -150,7 +150,7 @@ from voxelOccupancyNetwork import batch_process_voxels
 # Process multiple voxel files
 voxel_files = ['input1.npy', 'input2.npy', 'input3.npy']
 output_files = batch_process_voxels(
-    voxel_files, model, 'output_meshes/', 
+    voxel_files, model, 'output_meshes/',
     resolution=128, threshold=0.4
 )
 ```
@@ -160,7 +160,7 @@ output_files = batch_process_voxels(
 ```python
 # Try multiple thresholds automatically
 mesh = generator.generate_mesh_adaptive_threshold(
-    voxels, 
+    voxels,
     thresholds=(0.3, 0.4, 0.5, 0.6, 0.7)
 )
 ```
@@ -187,7 +187,7 @@ compare_voxel_and_mesh(voxels, mesh, "Voxel vs Mesh")
 from voxelOccupancyNetwork import save_model_checkpoint
 
 save_model_checkpoint(
-    model, optimizer, epoch, train_loss, val_loss, 
+    model, optimizer, epoch, train_loss, val_loss,
     'checkpoint.pth'
 )
 ```
